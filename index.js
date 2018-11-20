@@ -1,11 +1,14 @@
-const express = require('express')
-const app = express()
-const PORT = process.env.PORT || 5000
 const { db } = require('./config/firebaseConfig')
+const express = require('express')
+const cors = require('cors')
+const app = express()
+
+const PORT = process.env.PORT || 5000
+app.use(cors())
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.json({
+  res.send({
     status: 200,
     message: 'Hello World',
     server_time: new Date()
