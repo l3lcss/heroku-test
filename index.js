@@ -4,7 +4,14 @@ const PORT = process.env.PORT || 5000
 const { db } = require('./config/firebaseConfig')
 app.use(express.static('public'))
 
-app.get('/', async (req, res) => {
+app.get('/', (req, res) => {
+  res.json({
+    status: 200,
+    message: 'Hello World',
+    server_time: new Date()
+  })
+})
+app.get('/getuser', async (req, res) => {
   let results = []
   let snapshot = await db.collection('User').get()
   snapshot.forEach(doc => {
@@ -12,7 +19,6 @@ app.get('/', async (req, res) => {
   })
   res.json({
     status: 200,
-    message: 'Hello World v.2 test deploying',
     results
   })
 })
