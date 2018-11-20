@@ -39,5 +39,7 @@ git checkout master
 
 git add <file-change>
 
+git commit -m <message-commit>
+
 npm run build
 ```
