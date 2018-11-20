@@ -5,7 +5,10 @@ const PORT = process.env.PORT || 8080
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.send('Hello World')
+  res.json({
+    status: 200,
+    message: 'Hello World'
+  })
 })
 
-app.listen(PORT, () => console.log('application is listening on:', port))
+app.listen(PORT, () => console.log('application is listening on:', PORT))
