@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "vuex-firebase-58fb5",
+  "private_key_id": "d19ec31a65ef261438a0fc91f56bb969f7e6439c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDJG5eTmjSOgBci\nOjahC0e0I6LkI8qndtz513EiuFytj/boqJDhNi04g7FXGI3iUzYsF1aTISiseG1K\n37ORejYgSjf62bqKbKr3MXi9fxMRh/A/ZOP6hXFmL5aBkLeHtOitNyW96eGkh3+7\nsf2x9OZGjJXkGwvTlTOIp9QUgIAKr7QKjeLRPPJ1aXPCI/l5vpxKeIC4lZE6TLtp\nRdx4VTDkp9qwSiBP6d0MFzBL4Bu3RUkGa4I5U78Ee9Yb11Ykg6C0gQA8D5klJ89F\nX9lsYApiD9/m/hk2QaLQjjIkWWiba+7Bzvux7v/uEi40Q1erHN4KWCB0FGfkwhTs\nFC4HEJgNAgMBAAECggEAYqt1fpdhourorsPmCrSonRMA+DMxWmHAwJo6KYFQA14H\nlBYkY0L8A+blKyjicEFIanCW6wARXzGE2gAQr9dI2CXh+mM6GXGAnmC47yx6VBcg\nwlHDYyZ2wV6m1vIEggI6SMYub9PhACL1Aketg9L26nVOk4jLkCd7jdhd/yMe715v\nbIc4Gp9Xjj+xR5/BGhSo3enqE21aUbMVsEUkDTjVPyRizQ2sd5eroMbPlzRzqxhp\nf3mkyTMzXsOqlHgs2aYAPUsJkSPKkTwhZj9VeXJHrZccmJhSx+0pO0JS0LWCAn3K\nik3tyRnxmlNYnQkurY9DVSe+6OiWMvIIdf4BQDchNwKBgQDyt9T4DpNgh48KoXKS\nCb8Agml4359bKuORwVTEIXVdjwU8P145vldq+z3LnT3DHs0D+1kO80RZXW7+uMoq\nQm4BN65DEmuuVISQILiWwt/89z1XdNsemO3OjTYjR9sfoXV1ImxQb/Uo3R2KAZyw\nsSQ7s1474D/iXq6CB0tLc9Z45wKBgQDUHNpwKV3wEeKdZJCk+EAjK9SsKNIdj+Mj\ngcJuB91dm2vV+z7vgubbM99hphAuSJMs0CnRwjyZKP6WYTPMYbOV0eXygfeMPUmb\nO0Y3FXHrbi8Qky+LFULIPeLJo6YvyTpJlO+lyK4DOAoSB01KPP8AEWAkhwgv8NC0\nlTSICNQE6wKBgExVWkolM15hY7AhNEoPfJ1pZkhYc+KVK3rUhZclOqcQ6sGW4Ehi\nv1Vq7HVT32+1CR8edlTIVw+P3e+IKDSALd5+J3T6nxj1hbdaQxNO+GizTPxrSNpn\nmCqkqIkR+S0Kd0k+aTgm7cBLQhX8Cc5b95w6/gDwtsa3pkRIjPqO1L2zAoGAHW7b\niNDUriltLrXztFCWZcsBOdp4PY3n0NeCqU4CE6krb4frlcSuUCCEkMJAYIvFkGRa\nSTcQvZgIq8lVLLkp+FIl/F64gQdIHXg+KAqbwjWJ5lzmLgCHQc4EmEJTHzJnGirG\njlSogN3X1+SXfwOzxsiidK8gHbbm3wgNQAspkH0CgYEA6pCkxlOlBl0BMR8A+WVl\n0fC4kIilHaF8x6jfSDo/rA+5t133cAgt/zvI2qWhV6u2Th6aTjM1ycYcJtCNXZcC\nTeSgh4nKzAJJrX8ZEo8hSU6kthD8wwm96+7CNaLY4R2JFffhywUZHkbO8fH9D0+T\nFpQHCERXmpDqgLGdTeMjwhQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "vuex-firebase-58fb5@appspot.gserviceaccount.com",
+  "client_id": "113526338375541562482",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/vuex-firebase-58fb5%40appspot.gserviceaccount.com"
+}
