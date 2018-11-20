@@ -7,7 +7,7 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
   res.json({
     status: 200,
-    message: 'Hello World'
+    message: 'Hello World v.2'
   })
 })
 
