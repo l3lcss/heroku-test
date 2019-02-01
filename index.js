@@ -53,6 +53,7 @@ app.post('/line-token', async (req, res) => {
 })
 
 app.post('/line-push-message', async (req, res) => {
+  const { userId } = req.body
   let results = {
     success: 1
   }
@@ -71,7 +72,7 @@ app.post('/line-push-message', async (req, res) => {
   }
 
   const data = {
-    to: 'U244997ae05b8b3d08cafb34b2e1da2ba',
+    to: userId,
     messages: [
       {
         "type": "text",
