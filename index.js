@@ -178,5 +178,36 @@ app.post('/ctdsearchapi', async(req, res) => {
     res.send('')
   }
 })
+app.post('/ctdsearchapi-noti', async(req, res) => {
+  const { headers } = req
+  const origin = headers.origin
+  console.log(origin, 'origin')
+  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080' ||  origin === 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop') {
+    const options = {
+      method: 'POST',
+      url: 'http://ctdsearchapi-env-staging.qmw37utqwr.ap-southeast-1.elasticbeanstalk.com/v1/query/',
+      data: {
+        index: 'ctd_gps_notification',
+        search: {
+          query: {
+            bool: {
+              filter: {
+                exists: { field: 'id' }
+              },
+              must_not: {
+                term: { 'id.keyword': '' }
+              }
+            }
+           },
+          size: 999
+        }
+      }
+    }
+    let { data: { search: { hits: { hits } } } } = await axios(options)
+    res.send({ hits })
+  } else {
+    res.send('')
+  }
+})
 
 app.listen(PORT, () => console.log('application is listening on:', PORT))
