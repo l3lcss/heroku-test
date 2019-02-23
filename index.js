@@ -158,7 +158,16 @@ app.post('/ctdsearchapi', async(req, res) => {
       data: {
         index: 'ctd_gps',
         search: {
-          query: { match_all: {} },
+          query: {
+            bool: {
+              filter: {
+                exists: { field: 'id' }
+              },
+              must_not: {
+                term: { 'id.keyword': '' }
+              }
+            }
+           },
           size: 999
         }
       }
