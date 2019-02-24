@@ -129,7 +129,7 @@ app.post('/ctd-fetch-data', async (req, res) => {
 app.post('/ctd-auth', async(req, res) => {
   const { headers } = req
   const origin = headers.origin
-  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080') {
+  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080' || origin === 'https://ctd-truck-status.netlify.com') {
     const options = {
       method: 'POST',
       url: `http://203.150.102.19:8999/tms/user/auth`,
@@ -151,7 +151,7 @@ app.post('/ctd-auth', async(req, res) => {
 app.post('/ctdsearchapi', async(req, res) => {
   const { headers } = req
   const origin = headers.origin
-  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080') {
+  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080' || origin === 'https://ctd-truck-status.netlify.com') {
     const options = {
       method: 'POST',
       url: 'http://ctdsearchapi-env-staging.qmw37utqwr.ap-southeast-1.elasticbeanstalk.com/v1/query/',
@@ -182,7 +182,7 @@ app.post('/ctdsearchapi-noti', async(req, res) => {
   const { headers } = req
   const origin = headers.origin
   console.log(origin, 'origin')
-  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080' ||  origin === 'chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop') {
+  if (origin === 'https://ctd-table.netlify.com' || origin === 'http://localhost:8080' || origin === 'https://ctd-truck-status.netlify.com') {
     const options = {
       method: 'POST',
       url: 'http://ctdsearchapi-env-staging.qmw37utqwr.ap-southeast-1.elasticbeanstalk.com/v1/query/',
