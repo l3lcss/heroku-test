@@ -17,7 +17,7 @@ app.use(express.static('public'))
 app.get('/', (req, res) => {
   res.send({
     status: 200,
-    message: 'Hello World',
+    message: 'Hello World 2',
     server_time: new Date()
   })
 })
