@@ -6,7 +6,9 @@ const app = express()
 const axios = require('axios')
 const querystring = require('querystring')
 const { LINE_MESSAGING_API, LINE_HEADER, LINE_ACCESS_TOKEN_API, LINE_ACCESS_TOKEN_BODY, THAI_ASCII } = require('./constant')
-
+const { FireSQL } = require('firesql')
+const crypto = require('crypto-js')
+const moment = require('moment')
 const PORT = process.env.PORT || 5000
 app.use(cors())
 app.use(bodyParser.json({
@@ -14,23 +16,25 @@ app.use(bodyParser.json({
 }))
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   res.send({
     status: 200,
-    message: 'Hello World 2',
+    message: 'Hello World !!',
     server_time: new Date()
   })
 })
 
 app.get('/getuser', async (req, res) => {
+  const fireSQL = new FireSQL(db)
+  let snapshot = await fireSQL.query(`SELECT * 
+  FROM User
+  WHERE name = 'test text'
+  ORDER BY name DESC`)
   let results = []
-  let snapshot = await db.collection('User').get()
-  snapshot.forEach(doc => {
-    results.push(doc.data())
-  })
+  // let snapshot = await db.collection('User').get()
   res.json({
     status: 200,
-    results
+    snapshot
   })
 })
 
@@ -307,6 +311,42 @@ app.get('/test-hook', async (req, res) => {
     results.message = error.response.data
   }
   res.send(results)
+})
+
+app.post('/line-request', async(req, res) => {
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': `application/json`,
+      'X-LINE-ChannelId': `1576541010`,
+      'X-LINE-ChannelSecret': `42a61e669399da0a4144d89009106116`
+    },
+    data: {
+      'productName': 'Insurance',
+      'amount': 10000,
+      'currency': 'THB',
+      'orderId': 'A12b3c',
+      'confirmUrl': 'https://line-insurance.herokuapp.com/already-pay',
+      'langCd': 'th'
+    },
+    url: `https://sandbox-api-pay.line.me/v2/payments/request`
+  }
+  try {
+    const { data } = await axios(options)
+    console.log(data, 'data')
+    res.send(data)
+  } catch (error) {
+    console.log(error, 'error')
+    res.send(results)
+  }
+})
+
+app.post('/api-submit', async(req, res) => {
+  res.send({
+    status: 200,
+    message: 'done'
+  })
+  res.end()
 })
 
 app.listen(PORT, () => console.log('application is listening on:', PORT))
